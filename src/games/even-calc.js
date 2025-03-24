@@ -1,26 +1,42 @@
 import readlineSync from 'readline-sync';
-
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-function isEven(num) {
-    return num % 2 === 0;
+function getRandomIActions() {
+    const actions = {
+        1: '+',
+        2: '-',
+        3: '*',
+    };
+    return actions[getRandomInt(1, 4)];
+}
+
+function getResultOfFunction(num1, num2, actions) {
+    const objActions = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+    }
+    const result = objActions[actions](num1,num2);
+    return result
 }
 
 function game() {
     console.log('Welcome to the Brain Games!');
     const name = readlineSync.question('May I have your name? ');
     console.log('Hello, ' + name + '!');
-    console.log('Answer "yes" if the number is even, otherwise answer "no".')
+    console.log('What is the result of the expression?')
     let amountRightAnswer = 0;
     while (amountRightAnswer < 3) {
-        let number = getRandomInt(1, 100);
-        console.log("Question: " + number);
+        const numberOne = getRandomInt(1, 20);
+        const numberTwo = getRandomInt(1, 20);
+        const actions = getRandomIActions();
+        const rightAnswer = getResultOfFunction(numberOne, numberTwo, actions);
+        console.log("Question: " + numberOne + " " + actions + " " + numberTwo);
         const answer = readlineSync.question('Your answer: ');
-        const rightAnswer = isEven(number) ? 'yes' : 'no';
         if (answer != rightAnswer) {
             console.log(answer + " is wrong answer ;(. Correct answer was " + rightAnswer + ".");
             console.log("'Let's try again, " + name + "!");
@@ -31,6 +47,5 @@ function game() {
     }
     console.log('Congratulations,' + name);
 }
-
 
 export { game };
