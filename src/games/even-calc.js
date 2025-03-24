@@ -32,7 +32,7 @@ function game() {
     let amountRightAnswer = 0;
     while (amountRightAnswer < 3) {
         const numberOne = getRandomInt(1, 20);
-        const numberTwo = getRandomInt(1, 20);
+        const numberTwo = getRandomInt(1, 10);
         const actions = getRandomIActions();
         const rightAnswer = getResultOfFunction(numberOne, numberTwo, actions);
         console.log("Question: " + numberOne + " " + actions + " " + numberTwo);

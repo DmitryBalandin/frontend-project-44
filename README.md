@@ -2,3 +2,5 @@
 [![Actions Status](https://github.com/DmitryBalandin/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DmitryBalandin/frontend-project-44/actions)
 
 https://asciinema.org/a/LyqDh1oolLXeY04R7OnfnKUF9
+
+https://asciinema.org/connect/b1491dcc-4caf-44db-afaf-aeac9327d069
