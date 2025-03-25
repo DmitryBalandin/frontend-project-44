@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
 import createLogicGameCalc from "./games/even-calc.js";
 import createLogicIsEven from './games/even-games.js';
-import createLogicGameGsd
- from './games/gcd-games.js';
+import createLogicGameGsd from './games/gcd-games.js';
+import createLogicGameProgression from './games/progression-game.js';
+
 function game(answer, logicGame) {
     return function(){
         console.log('Welcome to the Brain Games!');
@@ -30,3 +31,4 @@ function game(answer, logicGame) {
 export const gameIsEven = game('Answer "yes" if the number is even, otherwise answer "no".', createLogicIsEven);
 export const gameCalc = game('What is the result of the expression?', createLogicGameCalc);
 export const gameGsd = game('Find the greatest common divisor of given numbers.', createLogicGameGsd);
+export const gameProgressional = game('What number is missing in the progression?', createLogicGameProgression);

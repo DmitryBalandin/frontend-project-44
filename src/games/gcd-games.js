@@ -21,3 +21,4 @@ export default function createLogicGameGsd() {
     const question = `${number1} ${number2}`;
     return { rightAnswer, question }
 }
+
