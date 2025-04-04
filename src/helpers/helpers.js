@@ -14,7 +14,7 @@ export function createGame(logicGame) {
       const { rightAnswer, question } = getResultAndQuestionGame();
       console.log(`Question: ${question}`);
       const yourAnswer = readlineSync.question('Your answer: ');
-      if (yourAnswer !== rightAnswer) {
+      if (yourAnswer != rightAnswer) {
         console.log(`"${yourAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
         console.log(`Let's try again, ${name}!`);
         return;
