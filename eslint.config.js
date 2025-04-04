@@ -6,7 +6,6 @@ import stylistic from '@stylistic/eslint-plugin'
 export default [
   stylistic.configs.recommended,
   pluginJs.configs.recommended,
-
   {
     files: [
       '**/*.{js}',
@@ -23,15 +22,10 @@ export default [
         tsconfigRootDir: import.meta.dirname,
       },
     },
-
+  },
+  {
+    rules: {
+      semi: ['warn', 'always'],
+    },
   },
 ]
-
-// import globals from "globals";
-// import pluginJs from "@eslint/js";
-
-// /** @type {import('eslint').Linter.Config[]} */
-// export default [
-//   {languageOptions: { globals: globals.node }},
-//   pluginJs.configs.recommended,
-// ];
