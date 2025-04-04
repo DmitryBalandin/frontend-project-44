@@ -23,6 +23,6 @@ export function createGame(logicGame) {
             }
             console.log("Correct!");
         }
-        console.log(`Congratulations, ${name}`);
+        console.log(`Congratulations, ${name}!`);
     }
 }
