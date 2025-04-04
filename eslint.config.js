@@ -1,6 +1,6 @@
-import globals from 'globals'
-import pluginJs from '@eslint/js'
-import stylistic from '@stylistic/eslint-plugin'
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
 // import { Linter } from 'eslint'
 
 export default [
@@ -28,4 +28,4 @@ export default [
       semi: ['warn', 'always'],
     },
   },
-]
+];

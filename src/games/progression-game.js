@@ -21,4 +21,4 @@ export default function createLogicGameProgression() {
     return { rightAnswer, question };
   };
   return { exercise, getResultAndQuestionGame };
-};
+}

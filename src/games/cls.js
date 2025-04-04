@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
-function game() {
+export default function game() {
   const name = readlineSync.question('May I have your name? ');
-  console.log('Hello, ' + name + '!');
+  console.log(`Hello, ${name}!`);
 };
-export { game };
+
