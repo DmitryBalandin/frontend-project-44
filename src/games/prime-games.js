@@ -1,7 +1,7 @@
 import getRandomInt from '../helpers/helpers.js'
 
 function isPrime(number) {
-  for (let i = 2, j = Math.sqrt(i); i <= j; i += 1) {
+  for (let i = 2, j = Math.sqrt(number); i <= j; i += 1) {
     if (number % i === 0) return true
   };
   return false
