@@ -2,9 +2,9 @@ import getRandomInt from '../helpers/helpers.js'
 
 function isPrime(number) {
   for (let i = 2, j = Math.sqrt(number); i <= j; i += 1) {
-    if (number % i === 0) return true
+    if (number % i === 0) return false
   };
-  return false
+  return true
 };
 
 export default function createLogicGameIsPrime() {
