@@ -1,16 +1,27 @@
-import getRandomInt from "../assets/assets.js";
+import getRandomInt from "../helpers/helpers.js";
+
+
+function createProgression(maxFirst = 20, maxDifference = 9) {
+    const numberFirst = getRandomInt(1, maxFirst);
+    const difference = getRandomInt(1, maxDifference);
+    const progression = [];
+    for (let i = 0; i < 10; i += 1) {
+        progression.push(numberFirst + (i * difference));
+    }
+    return progression;
+}
+
 
 export default function createLogicGameProgression() {
-    const numberFirst = getRandomInt(1, 20);
-    const progression = getRandomInt(1, 9);
-    const indexChange = getRandomInt(0,9);
-    const arrProgression = [];
-    for (let i = 0; i < 10; i +=1) {
-        arrProgression.push(numberFirst + (i * progression));
-    }
-    const rightAnswer = arrProgression[indexChange];
-    arrProgression[indexChange] = '..'
-    const question = arrProgression.join(' ');
-    return { rightAnswer, question }
-}
+    const exercise = 'What number is missing in the progression?';
+    const getResultAndQuestionGame = () => {
+        const indexChange = getRandomInt(0, 9);
+        const progression = createProgression();
+        const rightAnswer = progression[indexChange];
+        progression[indexChange] = '..'
+        const question = progression.join(' ');
+        return { rightAnswer, question }
+    };
+    return { exercise, getResultAndQuestionGame };
+};
 

@@ -1,4 +1,4 @@
-import getRandomInt from "../assets/assets.js";
+import getRandomInt from "../helpers/helpers.js"
 
 
 function gcd(num1, num2) {
@@ -10,11 +10,15 @@ function gcd(num1, num2) {
     }
 }
 
-export default function createLogicGameGsd() {
-    let number1 = getRandomInt(1, 100);
-    let number2 = getRandomInt(1, 100);
-    const rightAnswer = gcd(number1,number2);
-    const question = `${number1} ${number2}`;
-    return { rightAnswer, question }
+export default function createLogicGameGcd() {
+    const exercise = 'Find the greatest common divisor of given numbers.';
+    const getResultAndQuestionGame = () => {
+        let number1 = getRandomInt(1, 100);
+        let number2 = getRandomInt(1, 100);
+        const rightAnswer = gcd(number1, number2);
+        const question = `${number1} ${number2}`;
+        return { rightAnswer, question };
+    }
+    return { exercise, getResultAndQuestionGame };
 }
 
